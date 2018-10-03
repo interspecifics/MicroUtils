@@ -84,8 +84,8 @@ if __name__ == "__main__":
     #print old_frame.shape
     #h,w,c = old_frame.shape
     w,h = 1920,1080
-    nh=240
-    nw=320
+    nh=340
+    nw=420
 
     btn_photo = [(0,nh), (((nw+50)/2), nh+50-1),(255, 255, 255, 120 ),1]
     btn_video = [((nw+50)/2,nh),((nw+50)-1,nh+50-1),(255, 255, 255, 120 ), 1]
