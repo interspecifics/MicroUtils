@@ -20,18 +20,25 @@
 
 a. crear un archivo /home/pi/autostart.sh con el contenido siguiente:
 #!/bin/bash
+
 PATH=/usr/local/bin:$PATH
+
 cd /home/pi/W/python/handicam/
+
 python hcam.py &
 
 b. en la penultima linea cambiar a la ruta donde se encuentra el script hcam.py
+
 c. hacerlo autoejecutable con:
+
 chmod +x autostart.sh
 
 d. editar el archivo sudo /home/pi/.config/lxsession/LXDE-pi/autostart con:
+
 sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart
 
 e. añadir al final la línea:
+
 @/bin/bash /home/pi/autostart.sh
 
 f. reiniciar
