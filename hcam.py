@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-handicam>> 
+handicam>>
 touchscreen camera controller
 for speculative communications microscope
 emmanuel@interspecifics.cc
@@ -63,8 +63,8 @@ def main():
 	cam.framerate = 30
 	print "[_hCam_]"
 	#- other inits
-	dir_tl = "/home/pi/CE/timelapses/"
-	dir_vv = "/home/pi/CE/videos/"
+	dir_tl = "/home/pi/MicroUtils/timelapses/"
+	dir_vv = "/home/pi/MicroUtils/videos/"
 	if not os.path.exists(dir_vv):
 		os.makedirs(dir_vv)
 		print "[hCam] : created video dir " + dir_vv
@@ -83,14 +83,14 @@ def main():
 	screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
 	pygame.display.set_caption("[spec_coms]")
 	pygame.mouse.set_visible(1)
-	bg_img = load_image('./bg.png')
-	bga_img = load_image('./bga.png')
+	bg_img = load_image('bg.png')
+	bga_img = load_image('bga.png')
 	running = True
 	#- cam inits
 	cam.start_preview();
 	#- then be sure to loop
 	while running:
-		if state==0:			# st0 is preview 
+		if state==0:			# st0 is preview
 			screen.blit(bg_img, (0,0))
 			pygame.display.flip()
 		if state==1:			#st1 is ttimelapse
@@ -140,7 +140,7 @@ def main():
 			if event.type == pygame.KEYDOWN and event.key==K_SPACE:
 				running = false
 				cam.stop_preview()
-			if event.type == pygame.QUIT: 
+			if event.type == pygame.QUIT:
 				running = false
 				cam.stop_preview()
 				#sys.exit()
